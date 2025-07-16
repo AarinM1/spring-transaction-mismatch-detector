@@ -18,4 +18,5 @@ public class BankTransaction {
     private Instant timestamp;
     private String type; 
     private String source;
+    
 }
