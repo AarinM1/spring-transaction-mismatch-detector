@@ -10,7 +10,7 @@ import com.mongodb.client.MongoClients;
 
 @Configuration
 @EnableMongoRepositories(
-    basePackages = "com.example.my_project.primary",
+    basePackages = "com.example.my_project.repository.primary",
     mongoTemplateRef= "primaryMongoTemplate"
 )
 

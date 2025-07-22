@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +13,16 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.example.my_project.config.primaryMongoConfig;
-import com.example.my_project.config.secondaryMongoConfig;
 import com.example.my_project.model.BankTransaction;
+import com.example.my_project.repository.primary.PrimaryRepo;
+import com.example.my_project.repository.secondary.SecondaryRepo;
 
 @Service
 public class MismatchDetectionService {
     @Autowired
-    private primaryMongoConfig primaryRepo;
+    private PrimaryRepo primaryRepo;
     @Autowired
-    private secondaryMongoConfig secondaryRepo;
+    private SecondaryRepo secondaryRepo;
     @Autowired
     private ServiceNowClient serviceNowClient;
 
